@@ -1,0 +1,5 @@
+batch_id,batch_name,brand,category,supplier_name,size,quantity,unit_cost_cny,supplier_floor_cny,quote_valid_until,arrival_date,selling_end_date
+NEW-400,小批量卫衣,模拟品牌,hoodie,模拟供应商,S,100,40.00,35.00,2027-12-31,2026-11-15,2027-02-28
+NEW-400,小批量卫衣,模拟品牌,hoodie,模拟供应商,M,100,40.00,35.00,2027-12-31,2026-11-15,2027-02-28
+NEW-400,小批量卫衣,模拟品牌,hoodie,模拟供应商,L,100,40.00,35.00,2027-12-31,2026-11-15,2027-02-28
+NEW-400,小批量卫衣,模拟品牌,hoodie,模拟供应商,XL,100,40.00,35.00,2027-12-31,2026-11-15,2027-02-28

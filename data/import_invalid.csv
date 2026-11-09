@@ -1,0 +1,3 @@
+﻿batch_id,batch_name,brand,category,supplier_name,size,quantity,unit_cost_cny,supplier_floor_cny,quote_valid_until,arrival_date,selling_end_date
+BAD-001,错误报价示例,模拟品牌,hoodie,模拟供应商,S,100,60.001,55.00,2026-02-30,2026-11-15,2027-02-28
+BAD-001,错误报价示例,模拟品牌,hoodie,模拟供应商,S,-2,60.001,55.00,2026-02-30,2026-11-15,2027-02-28

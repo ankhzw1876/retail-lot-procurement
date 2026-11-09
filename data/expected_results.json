@@ -1,0 +1,222 @@
+{
+  "assumptions": "输入合法、情景已明确确认、演示评估日2026-11-06、五店参与；初始种子草稿未确认，UI需先确认。",
+  "engine_version": "batch-eval/1.0.0",
+  "cases": [
+    {
+      "batch_id": "LOT-A",
+      "recommendation": "BUY",
+      "safe_max_price_fen": 5625,
+      "budget_max_price_fen": 10000,
+      "cash_outlay_fen": 5800000,
+      "scenarios": {
+        "downside": {
+          "sold_units": 750,
+          "residual_units": 250,
+          "sales_revenue_fen": 7925000,
+          "residual_recovery_fen": 500000,
+          "procurement_cost_fen": 5000000,
+          "other_costs_fen": 800000,
+          "contribution_fen": 2625000,
+          "max_price_fen": 5625,
+          "break_even_price_fen": 7625
+        },
+        "base": {
+          "sold_units": 850,
+          "residual_units": 150,
+          "sales_revenue_fen": 9715000,
+          "residual_recovery_fen": 300000,
+          "procurement_cost_fen": 5000000,
+          "other_costs_fen": 800000,
+          "contribution_fen": 4215000,
+          "max_price_fen": 7215,
+          "break_even_price_fen": 9215
+        },
+        "upside": {
+          "sold_units": 950,
+          "residual_units": 50,
+          "sales_revenue_fen": 11255000,
+          "residual_recovery_fen": 100000,
+          "procurement_cost_fen": 5000000,
+          "other_costs_fen": 800000,
+          "contribution_fen": 5555000,
+          "max_price_fen": 8555,
+          "break_even_price_fen": 10555
+        }
+      },
+      "allocation": {
+        "per_store_units": {
+          "S": 20,
+          "M": 40,
+          "L": 60,
+          "XL": 80
+        },
+        "total_allocated": 1000,
+        "total_unallocated": 0,
+        "unallocated_by_size": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        }
+      }
+    },
+    {
+      "batch_id": "LOT-B",
+      "recommendation": "NEGOTIATE",
+      "safe_max_price_fen": 5625,
+      "budget_max_price_fen": 10000,
+      "cash_outlay_fen": 6800000,
+      "scenarios": {
+        "downside": {
+          "sold_units": 750,
+          "residual_units": 250,
+          "sales_revenue_fen": 7925000,
+          "residual_recovery_fen": 500000,
+          "procurement_cost_fen": 6000000,
+          "other_costs_fen": 800000,
+          "contribution_fen": 1625000,
+          "max_price_fen": 5625,
+          "break_even_price_fen": 7625
+        },
+        "base": {
+          "sold_units": 850,
+          "residual_units": 150,
+          "sales_revenue_fen": 9715000,
+          "residual_recovery_fen": 300000,
+          "procurement_cost_fen": 6000000,
+          "other_costs_fen": 800000,
+          "contribution_fen": 3215000,
+          "max_price_fen": 7215,
+          "break_even_price_fen": 9215
+        },
+        "upside": {
+          "sold_units": 950,
+          "residual_units": 50,
+          "sales_revenue_fen": 11255000,
+          "residual_recovery_fen": 100000,
+          "procurement_cost_fen": 6000000,
+          "other_costs_fen": 800000,
+          "contribution_fen": 4555000,
+          "max_price_fen": 8555,
+          "break_even_price_fen": 10555
+        }
+      },
+      "allocation": {
+        "per_store_units": {
+          "S": 20,
+          "M": 40,
+          "L": 60,
+          "XL": 80
+        },
+        "total_allocated": 1000,
+        "total_unallocated": 0,
+        "unallocated_by_size": {
+          "S": 0,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        }
+      }
+    },
+    {
+      "batch_id": "LOT-C",
+      "recommendation": "REJECT",
+      "safe_max_price_fen": 5625,
+      "budget_max_price_fen": 10000,
+      "cash_outlay_fen": 8800000,
+      "scenarios": {
+        "downside": {
+          "sold_units": 750,
+          "residual_units": 250,
+          "sales_revenue_fen": 7925000,
+          "residual_recovery_fen": 500000,
+          "procurement_cost_fen": 8000000,
+          "other_costs_fen": 800000,
+          "contribution_fen": -375000,
+          "max_price_fen": 5625,
+          "break_even_price_fen": 7625
+        },
+        "base": {
+          "sold_units": 850,
+          "residual_units": 150,
+          "sales_revenue_fen": 9715000,
+          "residual_recovery_fen": 300000,
+          "procurement_cost_fen": 8000000,
+          "other_costs_fen": 800000,
+          "contribution_fen": 1215000,
+          "max_price_fen": 7215,
+          "break_even_price_fen": 9215
+        },
+        "upside": {
+          "sold_units": 950,
+          "residual_units": 50,
+          "sales_revenue_fen": 11255000,
+          "residual_recovery_fen": 100000,
+          "procurement_cost_fen": 8000000,
+          "other_costs_fen": 800000,
+          "contribution_fen": 2555000,
+          "max_price_fen": 8555,
+          "break_even_price_fen": 10555
+        }
+      },
+      "allocation": {
+        "per_store_units": {
+          "S": 20,
+          "M": 20,
+          "L": 20,
+          "XL": 20
+        },
+        "total_allocated": 400,
+        "total_unallocated": 600,
+        "unallocated_by_size": {
+          "S": 600,
+          "M": 0,
+          "L": 0,
+          "XL": 0
+        }
+      }
+    }
+  ],
+  "sensitivity": [
+    {
+      "unit_cost_fen": 5600,
+      "recommendation": "BUY",
+      "contributions_fen": {
+        "downside": 2025000,
+        "base": 3615000,
+        "upside": 4955000
+      }
+    },
+    {
+      "unit_cost_fen": 5625,
+      "recommendation": "BUY",
+      "contributions_fen": {
+        "downside": 2000000,
+        "base": 3590000,
+        "upside": 4930000
+      }
+    },
+    {
+      "unit_cost_fen": 5626,
+      "recommendation": "NEGOTIATE",
+      "contributions_fen": {
+        "downside": 1999000,
+        "base": 3589000,
+        "upside": 4929000
+      }
+    }
+  ],
+  "review": {
+    "actual_sales_revenue_fen": 9465000,
+    "actual_residual_recovery_fen": 300000,
+    "actual_contribution_fen": 3265000,
+    "baseline_contribution_fen": 3615000,
+    "delta_fen": -350000,
+    "bridge_fen": {
+      "sales": -250000,
+      "residual": 0,
+      "procurement": 0,
+      "other_costs": -100000
+    }
+  }
+}

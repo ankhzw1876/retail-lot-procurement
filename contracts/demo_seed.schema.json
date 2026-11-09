@@ -1,0 +1,591 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:procurement-demo:seed:1",
+  "title": "采购系统演示种子",
+  "type": "object",
+  "properties": {
+    "workspace": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "currency": {
+          "const": "CNY"
+        },
+        "evaluation_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "engine_version": {
+          "const": "batch-eval/1.0.0"
+        },
+        "synthetic": {
+          "const": true
+        }
+      },
+      "required": [
+        "id",
+        "schema_version",
+        "currency",
+        "evaluation_date",
+        "engine_version",
+        "synthetic"
+      ],
+      "additionalProperties": false
+    },
+    "batches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "brand": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "const": "hoodie"
+          },
+          "demand_group_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "comparable_style_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "supplier_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100000
+          },
+          "unit_cost_fen": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "supplier_floor_fen": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "quote_valid_until": {
+            "type": "string",
+            "format": "date"
+          },
+          "arrival_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "selling_end_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "status": {
+            "enum": [
+              "new",
+              "evaluating",
+              "decided"
+            ]
+          },
+          "lines": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "batch_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "size": {
+                  "enum": [
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                  ]
+                },
+                "quantity": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100000
+                }
+              },
+              "required": [
+                "batch_id",
+                "size",
+                "quantity"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "policy": {
+            "type": "object",
+            "properties": {
+              "other_costs_fen": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "target_contribution_fen": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "budget_fen": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "other_costs_fen",
+              "target_contribution_fen",
+              "budget_fen"
+            ],
+            "additionalProperties": false
+          },
+          "scenarios": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "enum": [
+                    "downside",
+                    "base",
+                    "upside"
+                  ]
+                },
+                "stages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "price_fen": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 9007199254740991
+                      },
+                      "units": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100000
+                      }
+                    },
+                    "required": [
+                      "price_fen",
+                      "units"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "residual_unit_value_fen": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "key",
+                "stages",
+                "residual_unit_value_fen"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 3,
+            "maxItems": 3
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "brand",
+          "category",
+          "demand_group_id",
+          "comparable_style_id",
+          "supplier_name",
+          "quantity",
+          "unit_cost_fen",
+          "supplier_floor_fen",
+          "quote_valid_until",
+          "arrival_date",
+          "selling_end_date",
+          "status",
+          "lines",
+          "policy",
+          "scenarios"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "stores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "region": {
+            "type": "string",
+            "minLength": 1
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "incremental_capacity": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "region",
+          "active",
+          "incremental_capacity"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "store_demand": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "store_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "demand_group_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "size": {
+            "enum": [
+              "S",
+              "M",
+              "L",
+              "XL"
+            ]
+          },
+          "demand_proxy_units": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000
+          }
+        },
+        "required": [
+          "store_id",
+          "demand_group_id",
+          "size",
+          "demand_proxy_units"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "inventory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "store_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "demand_group_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "size": {
+            "enum": [
+              "S",
+              "M",
+              "L",
+              "XL"
+            ]
+          },
+          "units": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000
+          }
+        },
+        "required": [
+          "store_id",
+          "demand_group_id",
+          "size",
+          "units"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "comparables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "const": "hoodie"
+          },
+          "season": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reference_price_fen": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "demand_group_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why_comparable": {
+            "type": "string",
+            "minLength": 1
+          },
+          "differences": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "category",
+          "season",
+          "reference_price_fen",
+          "demand_group_id",
+          "why_comparable",
+          "differences"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "drafts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "batch_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "selected_store_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "scenario_basis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "confirmed_for_hash": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "batch_id",
+          "selected_store_ids",
+          "scenario_basis",
+          "evidence_ids",
+          "confirmed_for_hash",
+          "updated_at"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "enum": [
+              "historical",
+              "manual"
+            ]
+          },
+          "source_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "source_ref",
+          "summary"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "actual_review_fixture": {
+      "type": "object",
+      "properties": {
+        "required_batch_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_unit_cost_fen": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "closed_window": {
+          "const": true
+        },
+        "actual_stages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "price_fen": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "units": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100000
+              }
+            },
+            "required": [
+              "price_fen",
+              "units"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "residual_unit_value_fen": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "procurement_total_fen": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "other_costs_fen": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review_date": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "required_batch_id",
+        "required_unit_cost_fen",
+        "closed_window",
+        "actual_stages",
+        "residual_unit_value_fen",
+        "procurement_total_fen",
+        "other_costs_fen",
+        "note",
+        "review_date"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "workspace",
+    "batches",
+    "stores",
+    "store_demand",
+    "inventory",
+    "comparables",
+    "drafts",
+    "evidence",
+    "actual_review_fixture"
+  ],
+  "additionalProperties": false
+}

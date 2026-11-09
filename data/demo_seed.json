@@ -1,0 +1,719 @@
+{
+  "workspace": {
+    "id": "DEMO-LOCAL",
+    "schema_version": 1,
+    "currency": "CNY",
+    "evaluation_date": "2026-11-06",
+    "engine_version": "batch-eval/1.0.0",
+    "synthetic": true
+  },
+  "batches": [
+    {
+      "id": "LOT-A",
+      "name": "晨岚基础卫衣",
+      "brand": "晨岚",
+      "category": "hoodie",
+      "demand_group_id": "G-HOOD-AW",
+      "comparable_style_id": "CMP-HOOD-01",
+      "supplier_name": "模拟供应商-A",
+      "quantity": 1000,
+      "unit_cost_fen": 5000,
+      "supplier_floor_fen": 4800,
+      "quote_valid_until": "2026-12-31",
+      "arrival_date": "2026-11-15",
+      "selling_end_date": "2027-02-28",
+      "status": "evaluating",
+      "lines": [
+        {
+          "batch_id": "LOT-A",
+          "size": "S",
+          "quantity": 100
+        },
+        {
+          "batch_id": "LOT-A",
+          "size": "M",
+          "quantity": 200
+        },
+        {
+          "batch_id": "LOT-A",
+          "size": "L",
+          "quantity": 300
+        },
+        {
+          "batch_id": "LOT-A",
+          "size": "XL",
+          "quantity": 400
+        }
+      ],
+      "policy": {
+        "other_costs_fen": 800000,
+        "target_contribution_fen": 2000000,
+        "budget_fen": 10000000
+      },
+      "scenarios": [
+        {
+          "key": "downside",
+          "stages": [
+            {
+              "price_fen": 12900,
+              "units": 400
+            },
+            {
+              "price_fen": 7900,
+              "units": 350
+            }
+          ],
+          "residual_unit_value_fen": 2000
+        },
+        {
+          "key": "base",
+          "stages": [
+            {
+              "price_fen": 12900,
+              "units": 600
+            },
+            {
+              "price_fen": 7900,
+              "units": 250
+            }
+          ],
+          "residual_unit_value_fen": 2000
+        },
+        {
+          "key": "upside",
+          "stages": [
+            {
+              "price_fen": 12900,
+              "units": 750
+            },
+            {
+              "price_fen": 7900,
+              "units": 200
+            }
+          ],
+          "residual_unit_value_fen": 2000
+        }
+      ]
+    },
+    {
+      "id": "LOT-B",
+      "name": "云杉运动卫衣",
+      "brand": "云杉",
+      "category": "hoodie",
+      "demand_group_id": "G-HOOD-AW",
+      "comparable_style_id": "CMP-HOOD-01",
+      "supplier_name": "模拟供应商-B",
+      "quantity": 1000,
+      "unit_cost_fen": 6000,
+      "supplier_floor_fen": 5500,
+      "quote_valid_until": "2026-12-31",
+      "arrival_date": "2026-11-15",
+      "selling_end_date": "2027-02-28",
+      "status": "evaluating",
+      "lines": [
+        {
+          "batch_id": "LOT-B",
+          "size": "S",
+          "quantity": 100
+        },
+        {
+          "batch_id": "LOT-B",
+          "size": "M",
+          "quantity": 200
+        },
+        {
+          "batch_id": "LOT-B",
+          "size": "L",
+          "quantity": 300
+        },
+        {
+          "batch_id": "LOT-B",
+          "size": "XL",
+          "quantity": 400
+        }
+      ],
+      "policy": {
+        "other_costs_fen": 800000,
+        "target_contribution_fen": 2000000,
+        "budget_fen": 10000000
+      },
+      "scenarios": [
+        {
+          "key": "downside",
+          "stages": [
+            {
+              "price_fen": 12900,
+              "units": 400
+            },
+            {
+              "price_fen": 7900,
+              "units": 350
+            }
+          ],
+          "residual_unit_value_fen": 2000
+        },
+        {
+          "key": "base",
+          "stages": [
+            {
+              "price_fen": 12900,
+              "units": 600
+            },
+            {
+              "price_fen": 7900,
+              "units": 250
+            }
+          ],
+          "residual_unit_value_fen": 2000
+        },
+        {
+          "key": "upside",
+          "stages": [
+            {
+              "price_fen": 12900,
+              "units": 750
+            },
+            {
+              "price_fen": 7900,
+              "units": 200
+            }
+          ],
+          "residual_unit_value_fen": 2000
+        }
+      ]
+    },
+    {
+      "id": "LOT-C",
+      "name": "岩川厚卫衣",
+      "brand": "岩川",
+      "category": "hoodie",
+      "demand_group_id": "G-HOOD-AW",
+      "comparable_style_id": "CMP-HOOD-01",
+      "supplier_name": "模拟供应商-C",
+      "quantity": 1000,
+      "unit_cost_fen": 8000,
+      "supplier_floor_fen": 7500,
+      "quote_valid_until": "2026-12-31",
+      "arrival_date": "2026-11-15",
+      "selling_end_date": "2027-02-28",
+      "status": "evaluating",
+      "lines": [
+        {
+          "batch_id": "LOT-C",
+          "size": "S",
+          "quantity": 700
+        },
+        {
+          "batch_id": "LOT-C",
+          "size": "M",
+          "quantity": 100
+        },
+        {
+          "batch_id": "LOT-C",
+          "size": "L",
+          "quantity": 100
+        },
+        {
+          "batch_id": "LOT-C",
+          "size": "XL",
+          "quantity": 100
+        }
+      ],
+      "policy": {
+        "other_costs_fen": 800000,
+        "target_contribution_fen": 2000000,
+        "budget_fen": 10000000
+      },
+      "scenarios": [
+        {
+          "key": "downside",
+          "stages": [
+            {
+              "price_fen": 12900,
+              "units": 400
+            },
+            {
+              "price_fen": 7900,
+              "units": 350
+            }
+          ],
+          "residual_unit_value_fen": 2000
+        },
+        {
+          "key": "base",
+          "stages": [
+            {
+              "price_fen": 12900,
+              "units": 600
+            },
+            {
+              "price_fen": 7900,
+              "units": 250
+            }
+          ],
+          "residual_unit_value_fen": 2000
+        },
+        {
+          "key": "upside",
+          "stages": [
+            {
+              "price_fen": 12900,
+              "units": 750
+            },
+            {
+              "price_fen": 7900,
+              "units": 200
+            }
+          ],
+          "residual_unit_value_fen": 2000
+        }
+      ]
+    }
+  ],
+  "stores": [
+    {
+      "id": "ST-01",
+      "name": "东城体验店",
+      "region": "北京",
+      "active": true,
+      "incremental_capacity": 240
+    },
+    {
+      "id": "ST-02",
+      "name": "西城社区店",
+      "region": "北京",
+      "active": true,
+      "incremental_capacity": 240
+    },
+    {
+      "id": "ST-03",
+      "name": "海河体验店",
+      "region": "天津",
+      "active": true,
+      "incremental_capacity": 240
+    },
+    {
+      "id": "ST-04",
+      "name": "滨海社区店",
+      "region": "天津",
+      "active": true,
+      "incremental_capacity": 240
+    },
+    {
+      "id": "ST-05",
+      "name": "北城体验店",
+      "region": "石家庄",
+      "active": true,
+      "incremental_capacity": 240
+    }
+  ],
+  "store_demand": [
+    {
+      "store_id": "ST-01",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "S",
+      "demand_proxy_units": 30
+    },
+    {
+      "store_id": "ST-01",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "M",
+      "demand_proxy_units": 60
+    },
+    {
+      "store_id": "ST-01",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "L",
+      "demand_proxy_units": 90
+    },
+    {
+      "store_id": "ST-01",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "XL",
+      "demand_proxy_units": 120
+    },
+    {
+      "store_id": "ST-02",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "S",
+      "demand_proxy_units": 30
+    },
+    {
+      "store_id": "ST-02",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "M",
+      "demand_proxy_units": 60
+    },
+    {
+      "store_id": "ST-02",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "L",
+      "demand_proxy_units": 90
+    },
+    {
+      "store_id": "ST-02",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "XL",
+      "demand_proxy_units": 120
+    },
+    {
+      "store_id": "ST-03",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "S",
+      "demand_proxy_units": 30
+    },
+    {
+      "store_id": "ST-03",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "M",
+      "demand_proxy_units": 60
+    },
+    {
+      "store_id": "ST-03",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "L",
+      "demand_proxy_units": 90
+    },
+    {
+      "store_id": "ST-03",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "XL",
+      "demand_proxy_units": 120
+    },
+    {
+      "store_id": "ST-04",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "S",
+      "demand_proxy_units": 30
+    },
+    {
+      "store_id": "ST-04",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "M",
+      "demand_proxy_units": 60
+    },
+    {
+      "store_id": "ST-04",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "L",
+      "demand_proxy_units": 90
+    },
+    {
+      "store_id": "ST-04",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "XL",
+      "demand_proxy_units": 120
+    },
+    {
+      "store_id": "ST-05",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "S",
+      "demand_proxy_units": 30
+    },
+    {
+      "store_id": "ST-05",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "M",
+      "demand_proxy_units": 60
+    },
+    {
+      "store_id": "ST-05",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "L",
+      "demand_proxy_units": 90
+    },
+    {
+      "store_id": "ST-05",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "XL",
+      "demand_proxy_units": 120
+    }
+  ],
+  "inventory": [
+    {
+      "store_id": "ST-01",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "S",
+      "units": 10
+    },
+    {
+      "store_id": "ST-01",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "M",
+      "units": 20
+    },
+    {
+      "store_id": "ST-01",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "L",
+      "units": 30
+    },
+    {
+      "store_id": "ST-01",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "XL",
+      "units": 40
+    },
+    {
+      "store_id": "ST-02",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "S",
+      "units": 10
+    },
+    {
+      "store_id": "ST-02",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "M",
+      "units": 20
+    },
+    {
+      "store_id": "ST-02",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "L",
+      "units": 30
+    },
+    {
+      "store_id": "ST-02",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "XL",
+      "units": 40
+    },
+    {
+      "store_id": "ST-03",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "S",
+      "units": 10
+    },
+    {
+      "store_id": "ST-03",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "M",
+      "units": 20
+    },
+    {
+      "store_id": "ST-03",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "L",
+      "units": 30
+    },
+    {
+      "store_id": "ST-03",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "XL",
+      "units": 40
+    },
+    {
+      "store_id": "ST-04",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "S",
+      "units": 10
+    },
+    {
+      "store_id": "ST-04",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "M",
+      "units": 20
+    },
+    {
+      "store_id": "ST-04",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "L",
+      "units": 30
+    },
+    {
+      "store_id": "ST-04",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "XL",
+      "units": 40
+    },
+    {
+      "store_id": "ST-05",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "S",
+      "units": 10
+    },
+    {
+      "store_id": "ST-05",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "M",
+      "units": 20
+    },
+    {
+      "store_id": "ST-05",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "L",
+      "units": 30
+    },
+    {
+      "store_id": "ST-05",
+      "demand_group_id": "G-HOOD-AW",
+      "size": "XL",
+      "units": 40
+    }
+  ],
+  "comparables": [
+    {
+      "id": "CMP-HOOD-01",
+      "name": "模拟秋冬基础卫衣",
+      "category": "hoodie",
+      "season": "AW",
+      "reference_price_fen": 12900,
+      "demand_group_id": "G-HOOD-AW",
+      "why_comparable": "同为卫衣且价格带接近，作为人工参考。",
+      "differences": "款式、品牌、促销和尺码结构不同；不能直接复制销量。"
+    }
+  ],
+  "drafts": [
+    {
+      "batch_id": "LOT-A",
+      "selected_store_ids": [
+        "ST-01",
+        "ST-02",
+        "ST-03",
+        "ST-04",
+        "ST-05"
+      ],
+      "scenario_basis": "演示控制变量：三批使用相同销售情景，以比较报价和尺码结构的影响。实际使用需逐批验证。",
+      "evidence_ids": [
+        "E-LOT-A-QUOTE",
+        "E-LOT-A-SCENARIO",
+        "E-LOT-A-COMPARABLE",
+        "E-LOT-A-ALLOCATION"
+      ],
+      "confirmed_for_hash": null,
+      "updated_at": "2026-11-06T09:00:00+08:00"
+    },
+    {
+      "batch_id": "LOT-B",
+      "selected_store_ids": [
+        "ST-01",
+        "ST-02",
+        "ST-03",
+        "ST-04",
+        "ST-05"
+      ],
+      "scenario_basis": "演示控制变量：三批使用相同销售情景，以比较报价和尺码结构的影响。实际使用需逐批验证。",
+      "evidence_ids": [
+        "E-LOT-B-QUOTE",
+        "E-LOT-B-SCENARIO",
+        "E-LOT-B-COMPARABLE",
+        "E-LOT-B-ALLOCATION"
+      ],
+      "confirmed_for_hash": null,
+      "updated_at": "2026-11-06T09:00:00+08:00"
+    },
+    {
+      "batch_id": "LOT-C",
+      "selected_store_ids": [
+        "ST-01",
+        "ST-02",
+        "ST-03",
+        "ST-04",
+        "ST-05"
+      ],
+      "scenario_basis": "演示控制变量：三批使用相同销售情景，以比较报价和尺码结构的影响。实际使用需逐批验证。",
+      "evidence_ids": [
+        "E-LOT-C-QUOTE",
+        "E-LOT-C-SCENARIO",
+        "E-LOT-C-COMPARABLE",
+        "E-LOT-C-ALLOCATION"
+      ],
+      "confirmed_for_hash": null,
+      "updated_at": "2026-11-06T09:00:00+08:00"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E-LOT-A-QUOTE",
+      "type": "manual",
+      "source_ref": "demo_seed.json#/batches/0",
+      "summary": "供应商模拟报价，数量与尺码固定；非真实供应条件。"
+    },
+    {
+      "id": "E-LOT-A-SCENARIO",
+      "type": "manual",
+      "source_ref": "demo_seed.json#/batches/0/scenarios",
+      "summary": "用户待确认的销售情景；非机器学习预测。"
+    },
+    {
+      "id": "E-LOT-A-COMPARABLE",
+      "type": "historical",
+      "source_ref": "historical_sales.json",
+      "summary": "合成的可比卫衣销售与可售状态，不等于本批次销量。"
+    },
+    {
+      "id": "E-LOT-A-ALLOCATION",
+      "type": "manual",
+      "source_ref": "rule:greedy-size/1.0.0",
+      "summary": "按人工需求代理量、同类库存及新增承接量计算的分店建议。"
+    },
+    {
+      "id": "E-LOT-B-QUOTE",
+      "type": "manual",
+      "source_ref": "demo_seed.json#/batches/1",
+      "summary": "供应商模拟报价，数量与尺码固定；非真实供应条件。"
+    },
+    {
+      "id": "E-LOT-B-SCENARIO",
+      "type": "manual",
+      "source_ref": "demo_seed.json#/batches/1/scenarios",
+      "summary": "用户待确认的销售情景；非机器学习预测。"
+    },
+    {
+      "id": "E-LOT-B-COMPARABLE",
+      "type": "historical",
+      "source_ref": "historical_sales.json",
+      "summary": "合成的可比卫衣销售与可售状态，不等于本批次销量。"
+    },
+    {
+      "id": "E-LOT-B-ALLOCATION",
+      "type": "manual",
+      "source_ref": "rule:greedy-size/1.0.0",
+      "summary": "按人工需求代理量、同类库存及新增承接量计算的分店建议。"
+    },
+    {
+      "id": "E-LOT-C-QUOTE",
+      "type": "manual",
+      "source_ref": "demo_seed.json#/batches/2",
+      "summary": "供应商模拟报价，数量与尺码固定；非真实供应条件。"
+    },
+    {
+      "id": "E-LOT-C-SCENARIO",
+      "type": "manual",
+      "source_ref": "demo_seed.json#/batches/2/scenarios",
+      "summary": "用户待确认的销售情景；非机器学习预测。"
+    },
+    {
+      "id": "E-LOT-C-COMPARABLE",
+      "type": "historical",
+      "source_ref": "historical_sales.json",
+      "summary": "合成的可比卫衣销售与可售状态，不等于本批次销量。"
+    },
+    {
+      "id": "E-LOT-C-ALLOCATION",
+      "type": "manual",
+      "source_ref": "rule:greedy-size/1.0.0",
+      "summary": "按人工需求代理量、同类库存及新增承接量计算的分店建议。"
+    }
+  ],
+  "actual_review_fixture": {
+    "required_batch_id": "LOT-B",
+    "required_unit_cost_fen": 5600,
+    "closed_window": true,
+    "actual_stages": [
+      {
+        "price_fen": 12900,
+        "units": 550
+      },
+      {
+        "price_fen": 7900,
+        "units": 300
+      }
+    ],
+    "residual_unit_value_fen": 2000,
+    "procurement_total_fen": 5600000,
+    "other_costs_fen": 900000,
+    "note": "仅用于已将报价改为56元并保存采购快照的演示复盘；不是实际经营结果。",
+    "review_date": "2027-03-01"
+  }
+}
